@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Hello Django</h3>
+
+    {% for post in posts %}
+        <div class="card">
+            <a href="{% url 'home:post_detail' post.id post.slug%}" class="card-body">{{ post.body }}</a>
+        </div>
+    {% endfor %}
+
+{% endblock %}
